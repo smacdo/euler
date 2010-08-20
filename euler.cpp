@@ -13,5 +13,5 @@ int main( int argc, char* argv[] )
         }
     }
 
-    std::cout << "the result is: " << sum << std::endl;
+    std::cout << "The result is: " << sum << std::endl;
 }
