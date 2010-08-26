@@ -35,9 +35,9 @@ EulerEntry Registry::get( int id ) const
     return (m_entries.find( id ))->second;
 }
 
-RegistryConstItr Registry::getList() const
+std::map<int, EulerEntry> Registry::getList() const
 {
-    return m_entries.begin();
+    return std::map<int, EulerEntry>( m_entries );
 }
 
 EulerEntry::EulerEntry()

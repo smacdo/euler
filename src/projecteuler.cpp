@@ -61,17 +61,38 @@ int main( int argc, char* argv[] )
 
 void showUse()
 {
-    std::cout << "--use---" << std::endl;
+    std::cout << "Use: ./euler <problem_id>" << std::endl;
+    std::cout << " (If you need help, use --help)" << std::endl;
 }
 
 void showHelp()
 {
-    std::cout << "help goes here" << std::endl;
+    std::cout << " This program is a simple command line shell that allows an"
+              << " user to run solutions to various project euler problems. \n"
+              << " All of these solutions were written from scratch by Scott\n"
+              << std::endl
+              << " To get a list of all available solutions, please use the "
+              << " option --list" << std::endl
+              << std::endl
+              << " For more information about Project Euler, visit:\n"
+              << "   http://projecteuler.net" << std::endl
+              << std::endl;
 }
 
 void showProblemList()
 {
-    std::cout << "===== List of problems =====" << std::endl;
+    std::map<int, EulerEntry> entries = Registry::singleton().getList();
+    std::map<int, EulerEntry>::iterator itr;
+
+    std::cout << "========== Solutions ========================================"
+              << std::endl;
+
+    for ( itr = entries.begin(); itr != entries.end(); ++itr )
+    {
+        std::cout << " " << itr->first << ". "
+                  << itr->second.name()
+                  << std::endl;
+    }
 }
 
 int runProblem( int id, const std::vector<std::string>& args )

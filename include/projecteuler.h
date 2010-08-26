@@ -26,7 +26,8 @@ public:
     void add( const EulerEntry& entry );
     bool has( int id ) const;
     EulerEntry get( int id ) const;
-    RegistryConstItr getList() const;
+
+    std::map<int, EulerEntry> getList() const;
 
 private:
     Registry();
