@@ -1,9 +1,19 @@
-#include <iostream>
+/**
+ * If we list all the natural numbers below 10 that are multiples of 3 or 5,
+ * we get 3, 5, 6 and 9. The sum of these multiples is 23.
+ *
+ * Find the sum of all the multiples of 3 or 5 below 1000.
+ */
+#include "projecteuler.h"
 
-int main( int argc, char* argv[] )
+#include <string>
+#include <vector>
+
+REGISTER_PROBLEM(1, "Sum of 0..1000 for multiples of 3 and 5")
+
+long problem_1( const std::vector<std::string>& args )
 {
-    // project 1
-    int sum = 0;
+    long sum = 0;
 
     for ( int i = 1; i < 1000; ++i )
     {
@@ -13,5 +23,6 @@ int main( int argc, char* argv[] )
         }
     }
 
-    std::cout << "The result is: " << sum << std::endl;
+    // Done!
+    return sum;
 }
